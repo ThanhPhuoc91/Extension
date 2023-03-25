@@ -597,16 +597,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.HentaiVV = exports.HentaiVVInfo = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
 const HentaiVVParser_1 = require("./HentaiVVParser");
-const DOMAIN = 'https://hentaivv.com/';
+const DOMAIN = 'https://hentaivv1.com/';
 const method = 'GET';
 exports.HentaiVVInfo = {
-    version: '2.5.1',
+    version: '2.5.3',
     name: 'HentaiVV',
     icon: 'icon.png',
     author: 'Huynhzip3',
     authorWebsite: 'https://github.com/huynh12345678',
     description: 'Extension that pulls manga from HentaiVV',
-    websiteBaseURL: `https://hentaivv.com/`,
+    websiteBaseURL: `https://hentaivv1.com/`,
     contentRating: paperback_extensions_common_1.ContentRating.ADULT,
     sourceTags: [
         {
@@ -692,7 +692,7 @@ class HentaiVV extends paperback_extensions_common_1.Source {
             const page = $('#id_pagination > li.active > a').text().trim();
             const id = $("#views").attr('data-id');
             const request2 = createRequestObject({
-                url: 'https://hentaivv.com/wp-admin/admin-ajax.php',
+                url: 'https://hentaivv1.com/wp-admin/admin-ajax.php',
                 method: 'POST',
                 headers: {
                     'content-type': 'application/x-www-form-urlencoded'
@@ -831,7 +831,7 @@ class HentaiVV extends paperback_extensions_common_1.Source {
             //Featured
             let url = ``;
             let request = createRequestObject({
-                url: 'https://hentaivv.com/',
+                url: 'https://hentaivv1.com/',
                 method: "GET",
             });
             let featuredItems = [];
@@ -854,7 +854,7 @@ class HentaiVV extends paperback_extensions_common_1.Source {
             //Hot
             url = '';
             request = createRequestObject({
-                url: 'https://hentaivv.com/truyen/',
+                url: 'https://hentaivv1.com/truyen/',
                 method: "GET",
             });
             let hotItems = [];
@@ -877,7 +877,7 @@ class HentaiVV extends paperback_extensions_common_1.Source {
             //New Updates
             url = '';
             request = createRequestObject({
-                url: 'https://hentaivv.com/tim-kiem/?title=&status=all&time=update',
+                url: 'https://hentaivv1.com/tim-kiem/?title=&status=all&time=update',
                 method: "GET",
             });
             let newUpdatedItems = [];
@@ -901,7 +901,7 @@ class HentaiVV extends paperback_extensions_common_1.Source {
             //ngau nhien
             url = DOMAIN;
             request = createRequestObject({
-                url: 'https://hentaivv.com/tim-kiem/?title=&status=all&time=rand',
+                url: 'https://hentaivv1.com/tim-kiem/?title=&status=all&time=rand',
                 method: "GET",
             });
             let newAddItems = [];
@@ -925,7 +925,7 @@ class HentaiVV extends paperback_extensions_common_1.Source {
             //Newest
             url = '';
             request = createRequestObject({
-                url: 'https://hentaivv.com/tim-kiem/?title=&status=all&time=new',
+                url: 'https://hentaivv1.com/tim-kiem/?title=&status=all&time=new',
                 method: "GET",
             });
             let newItems = [];
@@ -956,15 +956,15 @@ class HentaiVV extends paperback_extensions_common_1.Source {
             let select = 1;
             switch (homepageSectionId) {
                 case "new":
-                    url = `https://hentaivv.com/tim-kiem/page/${page}/?title=&status=all&time=new`;
+                    url = `https://hentaivv1.com/tim-kiem/page/${page}/?title=&status=all&time=new`;
                     select = 0;
                     break;
                 case "new_updated":
-                    url = `https://hentaivv.com/tim-kiem/page/${page}/?title&status=all&time=update`;
+                    url = `https://hentaivv1.com/tim-kiem/page/${page}/?title&status=all&time=update`;
                     select = 1;
                     break;
                 case "view":
-                    url = `https://hentaivv.com/tim-kiem/page/${page}/?title=&status=all&time=rand`;
+                    url = `https://hentaivv1.com/tim-kiem/page/${page}/?title=&status=all&time=rand`;
                     select = 2;
                     break;
                 default:
@@ -1018,7 +1018,7 @@ class HentaiVV extends paperback_extensions_common_1.Source {
                 return genresFinal;
             };
             const request = createRequestObject({
-                url: (`https://hentaivv.com/tim-kiem/page/${page}/?title=${query.title ? encodeURI(query.title) : ""}&${convertGenres(genre)}&status=${(_d = status[0]) !== null && _d !== void 0 ? _d : 'all'}&time=${(_e = time[0]) !== null && _e !== void 0 ? _e : 'update'}`),
+                url: (`https://hentaivv1.com/tim-kiem/page/${page}/?title=${query.title ? encodeURI(query.title) : ""}&${convertGenres(genre)}&status=${(_d = status[0]) !== null && _d !== void 0 ? _d : 'all'}&time=${(_e = time[0]) !== null && _e !== void 0 ? _e : 'update'}`),
                 method: "GET"
             });
             const data = yield this.requestManager.schedule(request, 1);
@@ -1037,7 +1037,7 @@ class HentaiVV extends paperback_extensions_common_1.Source {
             const tags = [];
             const tags2 = [];
             const tags3 = [];
-            const url = `https://hentaivv.com/tim-kiem/?title=`;
+            const url = `https://hentaivv1.com/tim-kiem/?title=`;
             const request = createRequestObject({
                 url: url,
                 method: "GET",

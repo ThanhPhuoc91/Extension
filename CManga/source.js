@@ -7435,10 +7435,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CManga = exports.CMangaInfo = exports.DOMAIN = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
 const CMangaParser_1 = require("./CMangaParser");
-exports.DOMAIN = 'https://cmangaac.com/';
+exports.DOMAIN = 'https://cmangaad.com/';
 const method = 'GET';
 exports.CMangaInfo = {
-    version: '2.1.2',
+    version: '2.1.3',
     name: 'CManga',
     icon: 'icon.png',
     author: 'Huynhzip3',

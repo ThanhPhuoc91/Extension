@@ -594,18 +594,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Baotangtruyentranh = exports.BaotangtruyentranhInfo = void 0;
+exports.baotangtruyen2 = exports.baotangtruyen2Info = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
-const BaotangtruyentranhParser_1 = require("./BaotangtruyentranhParser");
-const DOMAIN = 'https://baotangtruyentranh.com/';
+const baotangtruyen2Parser_1 = require("./baotangtruyen2Parser");
+const DOMAIN = 'https://baotangtruyen2.com/';
 const method = 'GET';
-exports.BaotangtruyentranhInfo = {
-    version: '1.0.1',
-    name: 'Baotangtruyentranh',
+exports.baotangtruyen2Info = {
+    version: '1.0.2',
+    name: 'baotangtruyen2',
     icon: 'icon.png',
     author: 'Huynhzip3',
     authorWebsite: 'https://github.com/huynh12345678',
-    description: 'Extension that pulls manga from Baotangtruyentranh',
+    description: 'Extension that pulls manga from baotangtruyen2',
     websiteBaseURL: DOMAIN,
     contentRating: paperback_extensions_common_1.ContentRating.MATURE,
     sourceTags: [
@@ -615,7 +615,7 @@ exports.BaotangtruyentranhInfo = {
         }
     ]
 };
-class Baotangtruyentranh extends paperback_extensions_common_1.Source {
+class baotangtruyen2 extends paperback_extensions_common_1.Source {
     constructor() {
         super(...arguments);
         this.requestManager = createRequestManager({
@@ -690,12 +690,12 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
             let data = yield this.requestManager.schedule(request, 1);
             let $ = this.cheerio.load(data.data);
             let tags = [];
-            let creator = BaotangtruyentranhParser_1.decodeHTMLEntity($('.author p').last().text().trim());
+            let creator = baotangtruyen2Parser_1.decodeHTMLEntity($('.author p').last().text().trim());
             let statusFinal = $('.status p').last().text().trim().includes('Đang') ? 1 : 0;
             for (const t of $('a', '.kind').toArray()) {
                 const genre = $(t).text().trim();
                 const id = (_a = $(t).attr('href')) !== null && _a !== void 0 ? _a : genre;
-                tags.push(createTag({ label: BaotangtruyentranhParser_1.decodeHTMLEntity(genre), id }));
+                tags.push(createTag({ label: baotangtruyen2Parser_1.decodeHTMLEntity(genre), id }));
             }
             let desc = $("#summary").text();
             let image = (_b = $('.col-image img').attr("data-src")) !== null && _b !== void 0 ? _b : "";
@@ -704,8 +704,8 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
                 author: creator,
                 artist: creator,
                 desc: desc,
-                titles: [BaotangtruyentranhParser_1.decodeHTMLEntity($('.title-detail').text().trim())],
-                image: encodeURI(BaotangtruyentranhParser_1.decodeHTMLEntity(image)),
+                titles: [baotangtruyen2Parser_1.decodeHTMLEntity($('.title-detail').text().trim())],
+                image: encodeURI(baotangtruyen2Parser_1.decodeHTMLEntity(image)),
                 status: statusFinal,
                 // rating: parseFloat($('span[itemprop="ratingValue"]').text()),
                 hentai: false,
@@ -737,7 +737,7 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
                     name,
                     mangaId: mangaId,
                     langCode: paperback_extensions_common_1.LanguageCode.VIETNAMESE,
-                    time: this.convertTime(BaotangtruyentranhParser_1.decodeHTMLEntity(time))
+                    time: this.convertTime(baotangtruyen2Parser_1.decodeHTMLEntity(time))
                 }));
             }
             return chapters;
@@ -788,7 +788,7 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
             ///Get the section dat
             //New Updates
             let request = createRequestObject({
-                url: 'https://baotangtruyentranh.com/?page=1&typegroup=0',
+                url: 'https://baotangtruyen2.com/?page=1&typegroup=0',
                 method: "GET",
             });
             let data = yield this.requestManager.schedule(request, 1);
@@ -801,9 +801,9 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
                 let subtitle = $("ul .chapter > a", element).first().text().trim().replace('Chapter ', 'Ch.') + ' | ' + $("ul .chapter > i", element).first().text().trim();
                 newUpdatedItems.push(createMangaTile({
                     id: id !== null && id !== void 0 ? id : "",
-                    image: encodeURI(BaotangtruyentranhParser_1.decodeHTMLEntity(image)),
-                    title: createIconText({ text: BaotangtruyentranhParser_1.decodeHTMLEntity(title) }),
-                    subtitleText: createIconText({ text: BaotangtruyentranhParser_1.decodeHTMLEntity(subtitle) }),
+                    image: encodeURI(baotangtruyen2Parser_1.decodeHTMLEntity(image)),
+                    title: createIconText({ text: baotangtruyen2Parser_1.decodeHTMLEntity(title) }),
+                    subtitleText: createIconText({ text: baotangtruyen2Parser_1.decodeHTMLEntity(subtitle) }),
                 }));
             }
             newUpdated.items = newUpdatedItems;
@@ -823,16 +823,16 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
                 let subtitle = $(".slide-caption > a", element).first().text().trim() + ' | ' + $(".time", element).first().text().trim();
                 featuredItems.push(createMangaTile({
                     id: id !== null && id !== void 0 ? id : "",
-                    image: encodeURI(BaotangtruyentranhParser_1.decodeHTMLEntity(image)),
-                    title: createIconText({ text: BaotangtruyentranhParser_1.decodeHTMLEntity(title) }),
-                    subtitleText: createIconText({ text: BaotangtruyentranhParser_1.decodeHTMLEntity(subtitle) }),
+                    image: encodeURI(baotangtruyen2Parser_1.decodeHTMLEntity(image)),
+                    title: createIconText({ text: baotangtruyen2Parser_1.decodeHTMLEntity(title) }),
+                    subtitleText: createIconText({ text: baotangtruyen2Parser_1.decodeHTMLEntity(subtitle) }),
                 }));
             }
             featured.items = featuredItems;
             sectionCallback(featured);
             //trans
             request = createRequestObject({
-                url: 'https://baotangtruyentranh.com/?page=1&typegroup=1',
+                url: 'https://baotangtruyen2.com/?page=1&typegroup=1',
                 method: "GET",
             });
             let transItems = [];
@@ -845,9 +845,9 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
                 let subtitle = $("ul .chapter > a", element).first().text().trim().replace('Chapter ', 'Ch.') + ' | ' + $("ul .chapter > i", element).first().text().trim();
                 transItems.push(createMangaTile({
                     id: id !== null && id !== void 0 ? id : "",
-                    image: encodeURI(BaotangtruyentranhParser_1.decodeHTMLEntity(image)),
-                    title: createIconText({ text: BaotangtruyentranhParser_1.decodeHTMLEntity(title) }),
-                    subtitleText: createIconText({ text: BaotangtruyentranhParser_1.decodeHTMLEntity(subtitle) }),
+                    image: encodeURI(baotangtruyen2Parser_1.decodeHTMLEntity(image)),
+                    title: createIconText({ text: baotangtruyen2Parser_1.decodeHTMLEntity(title) }),
+                    subtitleText: createIconText({ text: baotangtruyen2Parser_1.decodeHTMLEntity(subtitle) }),
                 }));
             }
             trans.items = transItems;
@@ -862,11 +862,11 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
             let select = 1;
             switch (homepageSectionId) {
                 case "new_updated":
-                    url = `https://baotangtruyentranh.com/?page=${page}&typegroup=0`;
+                    url = `https://baotangtruyen2.com/?page=${page}&typegroup=0`;
                     select = 1;
                     break;
                 case "trans":
-                    url = `https://baotangtruyentranh.com/?page=${page}&typegroup=1`;
+                    url = `https://baotangtruyen2.com/?page=${page}&typegroup=1`;
                     select = 1;
                     break;
                 default:
@@ -878,8 +878,8 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
             });
             let data = yield this.requestManager.schedule(request, 1);
             let $ = this.cheerio.load(data.data);
-            let manga = BaotangtruyentranhParser_1.parseViewMore($);
-            metadata = !BaotangtruyentranhParser_1.isLastPage($) ? { page: page + 1 } : undefined;
+            let manga = baotangtruyen2Parser_1.parseViewMore($);
+            metadata = !baotangtruyen2Parser_1.isLastPage($) ? { page: page + 1 } : undefined;
             return createPagedResults({
                 results: manga,
                 metadata,
@@ -910,14 +910,14 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
                 }
             });
             const request = createRequestObject({
-                url: query.title ? encodeURI(`https://baotangtruyentranh.com/tim-truyen?keyword=${query.title}&page=${page}`)
-                    : encodeURI(`https://baotangtruyentranh.com/tim-truyen/${search.cate}?status=${search.status}&sort=${search.sort}&page=${page}`),
+                url: query.title ? encodeURI(`https://baotangtruyen2.com/tim-truyen?keyword=${query.title}&page=${page}`)
+                    : encodeURI(`https://baotangtruyen2.com/tim-truyen/${search.cate}?status=${search.status}&sort=${search.sort}&page=${page}`),
                 method: "GET",
             });
             let data = yield this.requestManager.schedule(request, 1);
             let $ = this.cheerio.load(data.data);
-            const tiles = BaotangtruyentranhParser_1.parseSearch($);
-            metadata = !BaotangtruyentranhParser_1.isLastPage($) ? { page: page + 1 } : undefined;
+            const tiles = baotangtruyen2Parser_1.parseSearch($);
+            metadata = !baotangtruyen2Parser_1.isLastPage($) ? { page: page + 1 } : undefined;
             return createPagedResults({
                 results: tiles,
                 metadata
@@ -994,7 +994,7 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
                     id = 'cate.';
                 if (!id || !label)
                     continue;
-                tags.push({ id: id, label: BaotangtruyentranhParser_1.decodeHTMLEntity(label) });
+                tags.push({ id: id, label: baotangtruyen2Parser_1.decodeHTMLEntity(label) });
             }
             const tagSections = [
                 createTagSection({ id: '1', label: 'Thể Loại', tags: tags.map(x => createTag(x)) }),
@@ -1005,9 +1005,9 @@ class Baotangtruyentranh extends paperback_extensions_common_1.Source {
         });
     }
 }
-exports.Baotangtruyentranh = Baotangtruyentranh;
+exports.baotangtruyen2 = baotangtruyen2;
 
-},{"./BaotangtruyentranhParser":57,"paperback-extensions-common":12}],57:[function(require,module,exports){
+},{"./baotangtruyen2Parser":57,"paperback-extensions-common":12}],57:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.decodeHTMLEntity = exports.isLastPage = exports.parseViewMore = exports.parseSearch = exports.generateSearch = exports.capitalizeFirstLetter = void 0;
