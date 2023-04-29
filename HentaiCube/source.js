@@ -597,7 +597,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.HentaiCube = exports.HentaiCubeInfo = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
 const HentaiCubeParser_1 = require("./HentaiCubeParser");
-const DOMAIN = 'https://hencb.top/';
+const DOMAIN = 'https://cubeteam.xyz/';
 const method = 'GET';
 exports.HentaiCubeInfo = {
     version: '2.7.2',
