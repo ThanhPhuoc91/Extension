@@ -42,7 +42,7 @@ https://huynlx.github.io/Extensions-Viet/
 |   31  | Truyentranh24             | https://truyentranh24.com                  |
 |   32  | TruyentranhAudio          | https://truyentranhaudio.online            |
 |   33  | TruyentranhLH             | https://truyentranhlh.net                  |
-|   34  | Truyentranhtuan           | http://truyentranhtuan.com                 |
+|   34  | Truyentranhtuan           | http://truyentuan.com                 |
 |   35  | TruyenVN                  | https://truyenvn.tv                        |
 |   36  | Vcomi                     | https://vcomi.co                           |
 |   37  | Vcomic                    | https://vcomic.net                         |
