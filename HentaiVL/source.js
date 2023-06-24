@@ -597,7 +597,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.HentaiVL = exports.HentaiVLInfo = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
 const HentaiVLParser_1 = require("./HentaiVLParser");
-const DOMAIN = 'https://hentaivnhot.net/';
+const DOMAIN = 'https://hentaivnmoi.com/';
 const method = 'GET';
 exports.HentaiVLInfo = {
     version: '1.0.1',
@@ -606,7 +606,7 @@ exports.HentaiVLInfo = {
     author: 'Huynhzip3',
     authorWebsite: 'https://github.com/huynh12345678',
     description: 'Extension that pulls manga from HentaiVL',
-    websiteBaseURL: `https://hentaivnhot.net/`,
+    websiteBaseURL: `https://hentaivnmoi.com/`,
     contentRating: paperback_extensions_common_1.ContentRating.ADULT,
     sourceTags: [
         {
@@ -750,7 +750,7 @@ class HentaiVL extends paperback_extensions_common_1.Source {
             //Hot
             let url = '';
             let request = createRequestObject({
-                url: 'https://hentaivnhot.net/',
+                url: 'https://hentaivnmoi.com/',
                 method: "GET",
             });
             let hotItems = [];
@@ -777,7 +777,7 @@ class HentaiVL extends paperback_extensions_common_1.Source {
             //New Updates
             url = '';
             request = createRequestObject({
-                url: 'https://hentaivnhot.net/',
+                url: 'https://hentaivnmoi.com/',
                 method: "GET",
             });
             let newUpdatedItems = [];
@@ -805,7 +805,7 @@ class HentaiVL extends paperback_extensions_common_1.Source {
             //New Added
             url = DOMAIN;
             request = createRequestObject({
-                url: 'https://hentaivnhot.net/',
+                url: 'https://hentaivnmoi.com/',
                 method: "GET",
             });
             let newAddItems = [];
@@ -840,15 +840,15 @@ class HentaiVL extends paperback_extensions_common_1.Source {
             let select = 1;
             switch (homepageSectionId) {
                 case "hot":
-                    url = `https://hentaivnhot.net/`;
+                    url = `https://hentaivnmoi.com/`;
                     select = 0;
                     break;
                 case "new_updated":
-                    url = `https://hentaivnhot.net/`;
+                    url = `https://hentaivnmoi.com/`;
                     select = 1;
                     break;
                 case "new_added":
-                    url = `https://hentaivnhot.net/`;
+                    url = `https://hentaivnmoi.com/`;
                     select = 2;
                     break;
                 default:
@@ -893,7 +893,7 @@ class HentaiVL extends paperback_extensions_common_1.Source {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const tags = [];
-            const url = `https://hentaivnhot.net/`;
+            const url = `https://hentaivnmoi.com/`;
             const request = createRequestObject({
                 url: url,
                 method: "GET",
