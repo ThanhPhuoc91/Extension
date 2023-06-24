@@ -31,7 +31,7 @@ import {
 
 import tags from './tags.json';
 
-const DOMAIN = `https://hentaivn.site/`;
+const DOMAIN = `https://hentaivn.autos/`;
 const method = 'GET';
 
 export const HentaiVNInfo: SourceInfo = {

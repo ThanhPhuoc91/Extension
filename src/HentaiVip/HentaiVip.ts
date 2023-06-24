@@ -28,7 +28,7 @@ export const HentaiVipInfo: SourceInfo = {
     author: 'Huynhzip3',
     authorWebsite: 'https://github.com/huynh12345678',
     description: 'Extension that pulls manga from HentaiVip',
-    websiteBaseURL: `https://hentaivn.vip/`,
+    websiteBaseURL: `https://hentaivnmoi.com/`,
     contentRating: ContentRating.ADULT,
     sourceTags: [
         {
@@ -49,7 +49,7 @@ export class HentaiVip extends Source {
                 request.headers = {
                     ...(request.headers ?? {}),
                     ...{
-                        'referer': 'https://hentaivn.vip/'
+                        'referer': 'https://hentaivnmoi.com/'
                     }
                 }
 
@@ -172,7 +172,7 @@ export class HentaiVip extends Source {
 
         //New Updates
         let request = createRequestObject({
-            url: 'https://hentaivn.vip/truyen-hentai-moi/',
+            url: 'https://hentaivnmoi.com/truyen-hentai-moi/',
             method: "GET",
         });
         let data = await this.requestManager.schedule(request, 1);
@@ -195,7 +195,7 @@ export class HentaiVip extends Source {
 
         //hot
         request = createRequestObject({
-            url: 'https://hentaivn.vip/truyen-hot/truyen-hot-nam/',
+            url: 'https://hentaivnmoi.com/truyen-hot/truyen-hot-nam/',
             method: "GET",
         });
         let hotItems: MangaTile[] = [];
@@ -218,7 +218,7 @@ export class HentaiVip extends Source {
 
         //đề cử
         request = createRequestObject({
-            url: 'https://hentaivn.vip/',
+            url: 'https://hentaivnmoi.com/',
             method: "GET",
         });
         let viewItems: MangaTile[] = [];
@@ -246,11 +246,11 @@ export class HentaiVip extends Source {
         let select = 1;
         switch (homepageSectionId) {
             case "new_updated":
-                url = `https://hentaivn.vip/truyen-hentai-moi/page/${page}/`;
+                url = `https://hentaivnmoi.com/truyen-hentai-moi/page/${page}/`;
                 select = 1;
                 break;
             case "hot":
-                url = `https://hentaivn.vip/truyen-hot/truyen-hot-nam/page/${page}/`;
+                url = `https://hentaivnmoi.com/truyen-hot/truyen-hot-nam/page/${page}/`;
                 select = 2;
                 break;
             // case "view":
@@ -280,7 +280,7 @@ export class HentaiVip extends Source {
         let page = metadata?.page ?? 1;
         const tags = query.includedTags?.map(tag => tag.id) ?? [];
         const request = createRequestObject({
-            url: query.title ? encodeURI(`https://hentaivn.vip/truyen-hentai-moi/page/${page}/?q=${query.title}`) :
+            url: query.title ? encodeURI(`https://hentaivnmoi.com/truyen-hentai-moi/page/${page}/?q=${query.title}`) :
                 tags[0] + `page/${page}/`,
             method: "GET",
         });
@@ -299,7 +299,7 @@ export class HentaiVip extends Source {
 
     async getSearchTags(): Promise<TagSection[]> {
         const tags: Tag[] = [];
-        const url = `https://hentaivn.vip/`
+        const url = `https://hentaivnmoi.com/`
         const request = createRequestObject({
             url: url,
             method: "GET",

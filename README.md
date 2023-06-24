@@ -16,7 +16,7 @@ https://huynlx.github.io/Extensions-Viet/
 |   5   | Gaito                     | https://www.gaito.me/truyen-hentai         |
 |   6   | GocTruyenTranh            | https://goctruyentranh.com                 |
 |   7   | HentaiCube                | https://hentaicube.net                     |
-|   8   | HentaiVip                 | https://hentaivn.vip                       |
+|   8   | HentaiVip                 | https://hentaivnmoi.com                       |
 |   9   | HentaiVL                  | https://hentaivl.com                       |
 |   10  | HentaiVN                  | https://hentaivn.tv                        |
 |   11  | HentaiVV                  | https://hentaivv.com                       |
