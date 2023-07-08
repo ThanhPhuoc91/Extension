@@ -597,7 +597,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.HentaiCube = exports.HentaiCubeInfo = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
 const HentaiCubeParser_1 = require("./HentaiCubeParser");
-const DOMAIN = 'https://hentaicube.net/';
+const DOMAIN = 'https://hentaicube.net';
 const method = 'GET';
 exports.HentaiCubeInfo = {
     version: '2.7.3',
@@ -606,7 +606,7 @@ exports.HentaiCubeInfo = {
     author: 'Huynhzip3',
     authorWebsite: 'https://github.com/huynh12345678',
     description: 'Extension that pulls manga from HentaiCube',
-    websiteBaseURL: DOMAIN,
+    websiteBaseURL: `https://hentaicube.net`,
     contentRating: paperback_extensions_common_1.ContentRating.ADULT,
     sourceTags: [
         {
@@ -635,12 +635,12 @@ class HentaiCube extends paperback_extensions_common_1.Source {
             }
         });
     }
-    getMangaShareUrl(mangaId) { return `${mangaId}`; }
+    getMangaShareUrl(mangaId) { return `https://hentaicube.net${mangaId}`; }
     ;
     getMangaDetails(mangaId) {
         var _a, _b, _c;
         return __awaiter(this, void 0, void 0, function* () {
-            const url = `${mangaId}`;
+            const url = `https://hentaicube.net${mangaId}`;
             const request = createRequestObject({
                 url: url,
                 method: "GET",
@@ -691,7 +691,7 @@ class HentaiCube extends paperback_extensions_common_1.Source {
     getChapters(mangaId) {
         return __awaiter(this, void 0, void 0, function* () {
             const request = createRequestObject({
-                url: `${mangaId}`,
+                url: `https://hentaicube.net${mangaId}`,
                 method,
             });
             const response = yield this.requestManager.schedule(request, 1);
@@ -717,7 +717,7 @@ class HentaiCube extends paperback_extensions_common_1.Source {
     getChapterDetails(mangaId, chapterId) {
         return __awaiter(this, void 0, void 0, function* () {
             const request = createRequestObject({
-                url: `${chapterId}`,
+                url: `https://hentaicube.net${chapterId}`,
                 method
             });
             const response = yield this.requestManager.schedule(request, 1);
@@ -786,7 +786,7 @@ class HentaiCube extends paperback_extensions_common_1.Source {
             //Featured
             let url = ``;
             let request = createRequestObject({
-                url: 'https://hentaicube.net/',
+                url: 'https://hentaicube.net',
                 method: "GET",
             });
             let featuredItems = [];
@@ -813,7 +813,7 @@ class HentaiCube extends paperback_extensions_common_1.Source {
             //top
             url = '';
             request = createRequestObject({
-                url: 'https://hentaicube.net/',
+                url: 'https://hentaicube.net',
                 method: "GET",
             });
             let topItems = [];
@@ -836,7 +836,7 @@ class HentaiCube extends paperback_extensions_common_1.Source {
             //Hot
             url = '';
             request = createRequestObject({
-                url: 'https://hentaicube.net/',
+                url: 'https://hentaicube.net',
                 method: "GET",
             });
             let hotItems = [];

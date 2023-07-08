@@ -597,7 +597,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.HentaiCube = exports.HentaiCubeInfo = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
 const HentaiCubeParser_1 = require("./HentaiCubeParser");
-const DOMAIN = 'https://hentaicube.net/';
+const DOMAIN = 'https://hentaicube.net';
 const method = 'GET';
 exports.HentaiCubeInfo = {
     version: '2.7.1',
@@ -786,7 +786,7 @@ class HentaiCube extends paperback_extensions_common_1.Source {
             //Featured
             let url = ``;
             let request = createRequestObject({
-                url: 'https://hentaicube.net/',
+                url: 'https://hentaicube.net',
                 method: "GET",
             });
             let featuredItems = [];
@@ -813,7 +813,7 @@ class HentaiCube extends paperback_extensions_common_1.Source {
             //top
             url = '';
             request = createRequestObject({
-                url: 'https://hentaicube.net/',
+                url: 'https://hentaicube.net',
                 method: "GET",
             });
             let topItems = [];
@@ -836,7 +836,7 @@ class HentaiCube extends paperback_extensions_common_1.Source {
             //Hot
             url = '';
             request = createRequestObject({
-                url: 'https://hentaicube.net/',
+                url: 'https://hentaicube.net',
                 method: "GET",
             });
             let hotItems = [];

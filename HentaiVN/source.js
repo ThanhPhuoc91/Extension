@@ -601,7 +601,7 @@ exports.HentaiVN = exports.HentaiVNInfo = void 0;
 const paperback_extensions_common_1 = require("paperback-extensions-common");
 const HentaiVNParser_1 = require("./HentaiVNParser");
 const tags_json_1 = __importDefault(require("./tags.json"));
-const DOMAIN = `https://hentaivn.site/`;
+const DOMAIN = `https://hentaivn.site`;
 const method = 'GET';
 exports.HentaiVNInfo = {
     version: '2.8.2',
@@ -610,7 +610,7 @@ exports.HentaiVNInfo = {
     author: 'Huynhzip3',
     authorWebsite: 'https://github.com/huynh12345678',
     description: 'Extension that pulls manga from HentaiVN',
-    websiteBaseURL: `https://hentaivn.site/`,
+    websiteBaseURL: `https://hentaivn.site`,
     contentRating: paperback_extensions_common_1.ContentRating.ADULT,
     sourceTags: [
         {
