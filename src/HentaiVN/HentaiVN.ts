@@ -31,8 +31,8 @@ import {
 
 import tags from './tags.json';
 
-const DOMAIN = `https://hentaivn.site/`;
-const method = 'GET';
+const DOMAIN = 'https://hentaivn.site'
+const method = 'GET'
 
 export const HentaiVNInfo: SourceInfo = {
     version: '2.8.1',
@@ -41,7 +41,7 @@ export const HentaiVNInfo: SourceInfo = {
     author: 'Huynhzip3',
     authorWebsite: 'https://github.com/huynh12345678',
     description: 'Extension that pulls manga from HentaiVN',
-    websiteBaseURL: '',
+    websiteBaseURL: `https://hentaivn.site`,
     contentRating: ContentRating.ADULT,
     sourceTags: [
         {

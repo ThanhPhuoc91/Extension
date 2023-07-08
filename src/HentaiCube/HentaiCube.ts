@@ -29,7 +29,7 @@ export const HentaiCubeInfo: SourceInfo = {
     author: 'Huynhzip3',
     authorWebsite: 'https://github.com/huynh12345678',
     description: 'Extension that pulls manga from HentaiCube',
-    websiteBaseURL: DOMAIN,
+    websiteBaseURL: `https://hentaicube.net/`,
     contentRating: ContentRating.ADULT,
     sourceTags: [
         {
@@ -40,7 +40,7 @@ export const HentaiCubeInfo: SourceInfo = {
 }
 
 export class HentaiCube extends Source {
-    getMangaShareUrl(mangaId: string): string { return `${mangaId}` };
+    getMangaShareUrl(mangaId: string): string { return `https://hentaicube.net/${mangaId}` };
     requestManager = createRequestManager({
         requestsPerSecond: 5,
         requestTimeout: 20000,
@@ -64,7 +64,7 @@ export class HentaiCube extends Source {
     })
 
     async getMangaDetails(mangaId: string): Promise<Manga> {
-        const url = `${mangaId}`;
+        const url = `https://hentaicube.net/${mangaId}`;
         const request = createRequestObject({
             url: url,
             method: "GET",
@@ -116,7 +116,7 @@ export class HentaiCube extends Source {
     }
     async getChapters(mangaId: string): Promise<Chapter[]> {
         const request = createRequestObject({
-            url: `${mangaId}`,
+            url: `https://hentaicube.net/${mangaId}`,
             method,
         });
         const response = await this.requestManager.schedule(request, 1);
@@ -142,7 +142,7 @@ export class HentaiCube extends Source {
 
     async getChapterDetails(mangaId: string, chapterId: string): Promise<ChapterDetails> {
         const request = createRequestObject({
-            url: `${chapterId}`,
+            url: `https://hentaicube.net/${chapterId}`,
             method
         });
 
