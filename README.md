@@ -10,7 +10,7 @@ https://huynlx.github.io/Extensions-Viet/
 |STT    | Name                      | Source URL                                 |
 | ----- | ------------------------- | ------------------------------------------ |
 |   1   | Beeng                     | https://beeng.org                          |
-|   2   | Blogtruyen                | https://blogtruyen.vn                      |
+|   2   | Blogtruyen                | https://blogtruyenmoi.com                      |
 |   3   | CManga                    | https://cmangatop.com                      |
 |   4   | DocTruyen3Q               | https://doctruyen3q.com                    |
 |   5   | Gaito                     | https://www.gaito.me/truyen-hentai         |
